@@ -83,13 +83,13 @@ export const loginUser = async (req, res, next) => {
 
     const token = jwt.sign(
       {
-          id: user._id,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          username: user.username,
-          email: user.email,
-          address: user.address,
-          role: user.role,
+        id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        username: user.username,
+        email: user.email,
+        address: user.address,
+        role: user.role,
       },
       JWT_SECRET
     );
