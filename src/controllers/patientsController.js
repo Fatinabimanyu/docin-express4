@@ -4,16 +4,17 @@ import Patient from "../models/patientsModel.js";
 const JWT_SECRET = getenv("JWT_SECRET");
 const SALT = getenv("SALT");
 
+export const findAllPatients = async (req, res, next) => {
+  try {
+    const patient = await Patient.find({});
+    res.json(patient);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const createPasien = async (req, res, next) => {
   try {
-    // const salt = await bcrypt.genSalt(Number(SALT));
-    // const encryptedPassword = bcrypt.hashSync(
-    //   req.body.password,
-    //   salt,
-    //   (err, hash) => {
-    //     console.log(err);
-    //   }
-    // );
     const patient = new Patient({
       nik: req.body.nik,
       name: req.body.name,

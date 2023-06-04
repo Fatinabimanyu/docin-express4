@@ -23,7 +23,12 @@ const appointmentSchema = new mongoose.Schema({
     required: true,
     default: "Receiver Name",
   },
-  subject: {
+  id_patient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Patient",
+    required: true,
+  },
+  patient_name: {
     type: String,
     required: true,
   },
