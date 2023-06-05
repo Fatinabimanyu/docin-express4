@@ -11,6 +11,7 @@ export const createAppointment = async (req, res, next) => {
       id_patient: req.body.id_patient,
       patient_name: req.body.patient_name,
       explanation: req.body.explanation,
+      explanation_doctor: req.body.explanation_doctor,
       date: req.body.date,
       time: req.body.time,
       appointmentFee: req.body.appointmentFee,

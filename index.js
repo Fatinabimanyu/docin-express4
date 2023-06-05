@@ -6,6 +6,7 @@ import usersRouter from "./src/routes/usersRoute.js";
 import doctorsRouter from "./src/routes/doctorsRoute.js";
 import appointmentsRouter from "./src/routes/appointmentsRoute.js";
 import patientsRouter from "./src/routes/patientsRoute.js";
+import transactionsRouter from "./src/routes/transactionsRoute.js";
 
 import getenv from "./src/helper/getenv.js";
 
@@ -35,6 +36,7 @@ app.use("/users", usersRouter);
 app.use("/doctors", doctorsRouter);
 app.use("/appointments", appointmentsRouter);
 app.use("/patients", patientsRouter);
+app.use("/transactions", transactionsRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

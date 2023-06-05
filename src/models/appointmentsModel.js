@@ -3,29 +3,29 @@ import mongoose from "mongoose";
 const appointmentSchema = new mongoose.Schema({
   creator_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user_docin",
     required: true,
   },
   receiver_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Doctor",
+    ref: "doctor_docin",
     required: true,
   },
   creator_name: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user_docin",
     required: true,
     default: "Creator Name",
   },
   receiver_name: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Doctor",
+    ref: "doctor_docin",
     required: true,
     default: "Receiver Name",
   },
   id_patient: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Patient",
+    ref: "patient",
     required: true,
   },
   patient_name: {
@@ -35,6 +35,9 @@ const appointmentSchema = new mongoose.Schema({
   explanation: {
     type: String,
     required: true,
+  },
+  explanation_doctor: {
+    type: String,
   },
   date: {
     type: String,
@@ -58,6 +61,6 @@ const appointmentSchema = new mongoose.Schema({
   },
 });
 
-const Appointment = mongoose.model("Appointment", appointmentSchema);
+const Appointment = mongoose.model("appointment_docin", appointmentSchema);
 
 export default Appointment;
